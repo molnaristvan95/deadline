@@ -219,7 +219,7 @@
           difference = allMinutes - now,
           inPercent = now / (allMinutes / 100),
           remained = 100 - inPercent,
-          inHours = Math.trunc(difference / 60) + ' : ' + (difference % 60);
+          inHours = Math.trunc(difference / 60) + ':' + (difference % 60);
         id('clockFrame').style.background = 'conic-gradient(rgb(255,0,60) 0 ' + inPercent + '%, #000 ' + inPercent + '% 100%)';
         id('loadLine').style.width = (inPercent - 2) + '%';
 
