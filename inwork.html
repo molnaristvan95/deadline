@@ -218,11 +218,12 @@
           now = parseFloat(h * 60) + parseFloat(m) - min,
           difference = allMinutes - now,
           inPercent = now / (allMinutes / 100),
-          remained = 100 - inPercent;
+          remained = 100 - inPercent,
+          inHours = Math.trunc(difference / 60) + ' : ' + (difference % 60);
         id('clockFrame').style.background = 'conic-gradient(rgb(255,0,60) 0 ' + inPercent + '%, #000 ' + inPercent + '% 100%)';
         id('loadLine').style.width = (inPercent - 2) + '%';
 
-        id('db').children[1].innerHTML = 'Most: ' + d + '<br> Max: ' + max + '<br> Min: ' + min + '<br> allMinutes: ' + allMinutes + '<br> now: ' + now + '<br> difference: ' + difference + '<br> inPercent: ' + inPercent + '<br> remained: ' + remained;
+        id('db').children[1].innerHTML = 'Most: ' + d + '<br> Max: ' + max + '<br> Min: ' + min + '<br> allMinutes: ' + allMinutes + '<br> now: ' + now + '<br> difference: ' + difference + '<br>inHours: ' + inHours + '<br> inPercent: ' + inPercent + '<br> remained: ' + remained;
 
         id('clock').innerText = inPercent.toPrecision(3) + '%';
 
